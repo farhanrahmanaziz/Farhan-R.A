@@ -23,10 +23,15 @@ export default function App() {
   const [loading, setLoading] = useState(true);
 
   useEffect(() => {
+    console.log('App mounting...');
     supabase.auth.getSession().then(({ data: { session } }) => {
+      console.log('Session fetched:', !!session);
       setSession(session);
       if (session) fetchProfile(session.user.id);
       else setLoading(false);
+    }).catch(err => {
+      console.error('Session error:', err);
+      setLoading(false);
     });
 
     const { data: { subscription } } = supabase.auth.onAuthStateChange((_event, session) => {
