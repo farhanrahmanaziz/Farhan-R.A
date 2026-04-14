@@ -1,0 +1,6 @@
+{
+  "name": "Absensi SMK Prima Unggul",
+  "description": "Aplikasi absensi siswa dan karyawan terintegrasi dengan Supabase untuk SMK Prima Unggul.",
+  "requestFramePermissions": [],
+  "majorCapabilities": []
+}
