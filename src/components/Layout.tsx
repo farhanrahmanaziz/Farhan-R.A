@@ -88,21 +88,11 @@ export default function Layout({ profile }: LayoutProps) {
         <div className="p-6 flex items-center justify-between border-b border-white/5 bg-brand-navy/20">
           {isSidebarOpen ? (
             <div className="flex items-center gap-3">
-              <img 
-                src="https://1.bp.blogspot.com/-_6M6X9Wv-R0/VZt3h_8E0vI/AAAAAAAAAI4/vO7yJv9v5pE/s1600/LOGO%2BSMK%2BPRIMA%2BUNGGUL.png" 
-                alt="SMK Prima Unggul Logo" 
-                className="w-10 h-10 object-contain drop-shadow-lg"
-                referrerPolicy="no-referrer"
-              />
-              <span className="font-bold text-lg tracking-tight">CBT Prima Unggul</span>
+              <div className="w-8 h-8 bg-brand-primary rounded-lg flex items-center justify-center font-bold shadow-lg shadow-brand-primary/20">S</div>
+              <span className="font-bold text-lg tracking-tight">SMK Prima Unggul</span>
             </div>
           ) : (
-            <img 
-              src="https://1.bp.blogspot.com/-_6M6X9Wv-R0/VZt3h_8E0vI/AAAAAAAAAI4/vO7yJv9v5pE/s1600/LOGO%2BSMK%2BPRIMA%2BUNGGUL.png" 
-              alt="Logo" 
-              className="w-10 h-10 object-contain mx-auto"
-              referrerPolicy="no-referrer"
-            />
+            <div className="w-8 h-8 bg-brand-primary rounded-lg flex items-center justify-center font-bold mx-auto shadow-lg shadow-brand-primary/20">S</div>
           )}
         </div>
 
