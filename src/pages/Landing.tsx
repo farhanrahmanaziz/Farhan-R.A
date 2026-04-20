@@ -17,7 +17,12 @@ export default function Landing() {
       {/* Navbar */}
       <nav className="fixed top-0 w-full z-50 bg-brand-dark/80 backdrop-blur-md border-b border-white/10 px-6 py-4 flex justify-between items-center text-white">
         <div className="flex items-center gap-2">
-          <div className="w-10 h-10 bg-brand-primary rounded-lg flex items-center justify-center font-bold text-xl">S</div>
+          <img 
+            src="https://1.bp.blogspot.com/-_6M6X9Wv-R0/VZt3h_8E0vI/AAAAAAAAAI4/vO7yJv9v5pE/s1600/LOGO%2BSMK%2BPRIMA%2BUNGGUL.png" 
+            alt="Logo" 
+            className="w-12 h-12 object-contain"
+            referrerPolicy="no-referrer"
+          />
           <div className="text-xl font-bold tracking-tight">
             SMK <span className="text-brand-primary">Prima Unggul</span>
           </div>

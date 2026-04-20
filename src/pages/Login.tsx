@@ -41,8 +41,13 @@ export default function Login() {
         className="w-full max-w-md bg-white/5 border border-white/10 backdrop-blur-xl rounded-3xl p-8 shadow-2xl relative z-10"
       >
         <div className="text-center mb-10">
-          <div className="w-16 h-16 bg-brand-primary rounded-2xl flex items-center justify-center mx-auto mb-6 shadow-lg shadow-brand-primary/20">
-            <LogIn className="w-8 h-8 text-white" />
+          <div className="w-20 h-20 bg-white/5 rounded-3xl flex items-center justify-center mx-auto mb-6 shadow-xl border border-white/10 p-2">
+            <img 
+              src="https://1.bp.blogspot.com/-_6M6X9Wv-R0/VZt3h_8E0vI/AAAAAAAAAI4/vO7yJv9v5pE/s1600/LOGO%2BSMK%2BPRIMA%2BUNGGUL.png" 
+              alt="SMK Prima Unggul Logo" 
+              className="w-full h-full object-contain"
+              referrerPolicy="no-referrer"
+            />
           </div>
           <h1 className="text-3xl font-bold text-white mb-2">Selamat Datang</h1>
           <p className="text-gray-400">Silakan masuk ke Portal CBT SMK Prima Unggul</p>
