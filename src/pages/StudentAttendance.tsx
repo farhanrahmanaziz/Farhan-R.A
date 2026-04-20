@@ -99,8 +99,8 @@ export default function StudentAttendance({ profile }: Props) {
     <div className="space-y-8">
       <div className="flex flex-col md:flex-row md:items-center justify-between gap-6">
         <div>
-          <h1 className="text-3xl font-bold text-white">Absensi Siswa</h1>
-          <p className="text-gray-400">Pilih kelas dan lakukan pencatatan kehadiran siswa.</p>
+          <h1 className="text-3xl font-bold text-white">Bank Soal & Pengaturan Ujian</h1>
+          <p className="text-gray-400">Kelola daftar soal dan jadwal ujian untuk setiap kelas.</p>
         </div>
         <div className="flex items-center gap-4">
           <div className="bg-white/5 p-2 rounded-2xl shadow-sm border border-white/10 flex items-center gap-2">
@@ -121,7 +121,7 @@ export default function StudentAttendance({ profile }: Props) {
             className="flex items-center gap-2 bg-brand-primary hover:bg-brand-accent text-white px-6 py-3 rounded-2xl font-bold transition-all shadow-lg shadow-brand-primary/20 disabled:opacity-50"
           >
             <Save className="w-5 h-5" />
-            {saving ? 'Menyimpan...' : 'Simpan Absensi'}
+            {saving ? 'Memproses...' : 'Aktifkan Ujian'}
           </button>
         </div>
       </div>
@@ -143,8 +143,8 @@ export default function StudentAttendance({ profile }: Props) {
               <thead>
                 <tr className="bg-brand-navy/20 border-b border-white/10">
                   <th className="px-8 py-5 text-xs font-bold text-gray-400 uppercase tracking-widest">NIS</th>
-                  <th className="px-8 py-5 text-xs font-bold text-gray-400 uppercase tracking-widest">Nama Siswa</th>
-                  <th className="px-8 py-5 text-xs font-bold text-gray-400 uppercase tracking-widest text-center">Status Kehadiran</th>
+                  <th className="px-8 py-5 text-xs font-bold text-gray-400 uppercase tracking-widest">Nama Peserta</th>
+                  <th className="px-8 py-5 text-xs font-bold text-gray-400 uppercase tracking-widest text-center">Status Pengerjaan</th>
                 </tr>
               </thead>
               <tbody className="divide-y divide-white/5">
@@ -190,26 +190,26 @@ export default function StudentAttendance({ profile }: Props) {
             <Clock className="w-6 h-6 text-brand-primary" />
           </div>
           <div>
-            <p className="font-bold">Waktu Absensi</p>
+            <p className="font-bold">Informasi Ujian</p>
             <p className="text-sm text-gray-300">{format(new Date(), 'EEEE, d MMMM yyyy', { locale: id })}</p>
           </div>
         </div>
         <div className="flex items-center gap-8 relative z-10">
           <div className="text-center">
             <p className="text-2xl font-bold">{filteredStudents.length}</p>
-            <p className="text-xs text-gray-300 uppercase tracking-widest">Total Siswa</p>
+            <p className="text-xs text-gray-300 uppercase tracking-widest">Peserta</p>
           </div>
           <div className="text-center">
             <p className="text-2xl font-bold text-green-400">
               {Object.values(attendance).filter(v => v === 'Hadir').length}
             </p>
-            <p className="text-xs text-gray-300 uppercase tracking-widest">Hadir</p>
+            <p className="text-xs text-gray-300 uppercase tracking-widest">Selesai</p>
           </div>
           <div className="text-center">
             <p className="text-2xl font-bold text-red-400">
               {Object.values(attendance).filter(v => v === 'Alfa').length}
             </p>
-            <p className="text-xs text-gray-300 uppercase tracking-widest">Alfa</p>
+            <p className="text-xs text-gray-300 uppercase tracking-widest">Belum Mengerjakan</p>
           </div>
         </div>
       </div>

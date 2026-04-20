@@ -46,20 +46,20 @@ export default function Landing() {
           className="relative z-10 max-w-4xl"
         >
           <h1 className="text-5xl md:text-7xl font-extrabold text-white mb-6 leading-tight">
-            Membangun Masa Depan <br />
+            Portal Ujian Online <br />
             <span className="text-transparent bg-clip-text bg-gradient-to-r from-brand-primary via-brand-secondary to-brand-navy">
-              Gemilang Bersama Kami
+              CBT SMK Prima Unggul
             </span>
           </h1>
           <p className="text-lg md:text-xl text-gray-400 mb-10 max-w-2xl mx-auto leading-relaxed">
-            SMK Prima Unggul adalah institusi pendidikan kejuruan yang berfokus pada keahlian industri kreatif dan teknologi informasi, mencetak generasi unggul siap kerja.
+            Sistem Computer Based Test (CBT) yang aman, transparan, dan terintegrasi untuk mendukung proses penilaian hasil belajar siswa secara digital.
           </p>
           <div className="flex flex-wrap justify-center gap-4">
             <Link 
               to="/login" 
               className="flex items-center gap-2 bg-brand-primary text-white px-8 py-4 rounded-xl font-bold text-lg hover:bg-brand-accent transition-all group shadow-lg shadow-brand-primary/20"
             >
-              Mulai Absensi <ArrowRight className="w-5 h-5 group-hover:translate-x-1 transition-transform" />
+              Mulai Ujian <ArrowRight className="w-5 h-5 group-hover:translate-x-1 transition-transform" />
             </Link>
           </div>
         </motion.div>

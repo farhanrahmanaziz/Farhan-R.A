@@ -43,13 +43,13 @@ export default function Layout({ profile }: LayoutProps) {
       roles: ['admin', 'guru', 'staff']
     },
     { 
-      name: 'Absensi Karyawan', 
+      name: 'Presensi Guru', 
       path: '/app/absensi-karyawan', 
       icon: <UserCheck className="w-5 h-5" />,
       roles: ['admin', 'guru', 'staff']
     },
     { 
-      name: 'Absensi Siswa', 
+      name: 'Bank Soal / Ujian', 
       path: '/app/absensi-siswa', 
       icon: <GraduationCap className="w-5 h-5" />,
       roles: ['admin', 'guru']
@@ -67,7 +67,7 @@ export default function Layout({ profile }: LayoutProps) {
       roles: ['admin']
     },
     { 
-      name: 'Rekap Absensi', 
+      name: 'Hasil & Rekap', 
       path: '/app/rekap', 
       icon: <Users className="w-5 h-5" />,
       roles: ['admin', 'guru']

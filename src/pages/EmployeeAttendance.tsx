@@ -71,8 +71,8 @@ export default function EmployeeAttendance({ profile }: Props) {
     <div className="max-w-4xl mx-auto space-y-8">
       <div className="flex flex-col md:flex-row md:items-center justify-between gap-4">
         <div>
-          <h1 className="text-3xl font-bold text-white">Absensi Mandiri</h1>
-          <p className="text-gray-400">Silakan lakukan absensi kehadiran harian Anda.</p>
+          <h1 className="text-3xl font-bold text-white">Presensi Pengawas</h1>
+          <p className="text-gray-400">Silakan lakukan presensi kehadiran Anda sebagai pengawas ujian.</p>
         </div>
         <div className="bg-white/5 px-6 py-3 rounded-2xl shadow-sm border border-white/10 flex items-center gap-3">
           <CalendarIcon className="w-5 h-5 text-brand-primary" />
@@ -92,14 +92,14 @@ export default function EmployeeAttendance({ profile }: Props) {
               <div className="w-20 h-20 bg-green-500/10 text-green-500 rounded-full flex items-center justify-center mx-auto mb-6 border border-green-500/20">
                 <CheckCircle2 className="w-10 h-10" />
               </div>
-              <h3 className="text-2xl font-bold text-white mb-2">Sudah Absen!</h3>
-              <p className="text-gray-400 mb-6">Anda telah melakukan absensi hari ini pada pukul:</p>
+              <h3 className="text-2xl font-bold text-white mb-2">Presensi Berhasil!</h3>
+              <p className="text-gray-400 mb-6">Anda telah tercatat sebagai pengawas hari ini pada pukul:</p>
               <div className="bg-white/5 inline-block px-8 py-4 rounded-2xl font-mono text-2xl font-bold text-white border border-white/10">
                 {format(new Date(todayAttendance.check_in), 'HH:mm:ss')}
               </div>
               <div className="mt-8 pt-8 border-t border-white/10 text-left">
                 <div className="flex justify-between text-sm mb-2">
-                  <span className="text-gray-400">Status:</span>
+                  <span className="text-gray-400">Status Pengawas:</span>
                   <span className="font-bold text-green-400">{todayAttendance.status}</span>
                 </div>
                 {todayAttendance.keterangan && (
@@ -152,7 +152,7 @@ export default function EmployeeAttendance({ profile }: Props) {
                 disabled={loading}
                 className="w-full bg-brand-primary hover:bg-brand-accent text-white py-5 rounded-2xl font-bold text-lg shadow-xl shadow-brand-primary/20 transition-all transform active:scale-[0.98] disabled:opacity-50"
               >
-                {loading ? 'Mengirim...' : 'Kirim Absensi Sekarang'}
+                {loading ? 'Mengirim...' : 'Kirim Presensi Sekarang'}
               </button>
             </form>
           )}
@@ -169,26 +169,26 @@ export default function EmployeeAttendance({ profile }: Props) {
             <div className="text-5xl font-mono font-bold tracking-tighter mb-2">
               {format(new Date(), 'HH:mm')}
             </div>
-            <p className="text-gray-300 text-sm">Pastikan Anda melakukan absensi sebelum jam 07:30 WIB untuk menghindari keterlambatan.</p>
+            <p className="text-gray-300 text-sm">Pastikan Anda melakukan presensi sebelum waktu ujian dimulai.</p>
           </div>
 
           <div className="bg-white/5 rounded-3xl p-8 shadow-sm border border-white/10">
             <h3 className="text-lg font-bold text-white mb-6 flex items-center gap-2">
               <AlertCircle className="w-5 h-5 text-orange-500" />
-              Informasi Penting
+              Instruksi Pengawas
             </h3>
             <ul className="space-y-4 text-sm text-gray-400">
               <li className="flex gap-3">
                 <div className="w-1.5 h-1.5 bg-brand-primary rounded-full mt-1.5 flex-shrink-0"></div>
-                <span>Absensi hanya dapat dilakukan satu kali dalam sehari.</span>
+                <span>Presensi hanya dapat dilakukan saat jadwal ujian aktif.</span>
               </li>
               <li className="flex gap-3">
                 <div className="w-1.5 h-1.5 bg-brand-primary rounded-full mt-1.5 flex-shrink-0"></div>
-                <span>Jika Anda berhalangan hadir, harap pilih status 'Izin' atau 'Sakit' dan berikan keterangan yang jelas.</span>
+                <span>Laporkan segala bentuk kecurangan melalui kolom keterangan.</span>
               </li>
               <li className="flex gap-3">
                 <div className="w-1.5 h-1.5 bg-brand-primary rounded-full mt-1.5 flex-shrink-0"></div>
-                <span>Data absensi akan direkap secara otomatis setiap akhir bulan.</span>
+                <span>Pastikan koneksi internet stabil sebelum memulai ujian.</span>
               </li>
             </ul>
           </div>

@@ -7,7 +7,8 @@ import {
   Clock, 
   Calendar as CalendarIcon,
   TrendingUp,
-  Settings
+  Settings,
+  FileText
 } from 'lucide-react';
 import { useEffect, useState } from 'react';
 import { supabase } from '../lib/supabase';
@@ -52,22 +53,22 @@ export default function Dashboard({ profile }: DashboardProps) {
       roles: ['admin', 'guru']
     },
     { 
-      title: 'Total Karyawan', 
-      value: stats.totalEmployees, 
-      icon: <Users className="w-6 h-6" />, 
+      title: 'Bank Soal', 
+      value: '42', 
+      icon: <FileText className="w-6 h-6" />, 
       color: 'bg-purple-500',
-      roles: ['admin']
+      roles: ['admin', 'guru']
     },
     { 
-      title: 'Kehadiran Hari Ini', 
-      value: `${stats.todayAttendance}%`, 
+      title: 'Ujian Aktif', 
+      value: '3', 
       icon: <CheckCircle2 className="w-6 h-6" />, 
       color: 'bg-green-500',
       roles: ['admin', 'guru', 'staff']
     },
     { 
-      title: 'Tugas Tertunda', 
-      value: stats.pendingTasks, 
+      title: 'Hasil Menunggu', 
+      value: '12', 
       icon: <Clock className="w-6 h-6" />, 
       color: 'bg-orange-500',
       roles: ['admin', 'guru']
@@ -82,7 +83,7 @@ export default function Dashboard({ profile }: DashboardProps) {
         <div className="absolute bottom-0 left-0 w-64 h-64 bg-brand-navy opacity-20 blur-[80px] -ml-32 -mb-32"></div>
         <div className="relative z-10">
           <h1 className="text-3xl font-bold mb-2">Halo, {profile?.full_name}! 👋</h1>
-          <p className="text-gray-400">Selamat datang kembali di sistem absensi SMK Prima Unggul.</p>
+          <p className="text-gray-400">Selamat datang kembali di sistem CBT SMK Prima Unggul.</p>
           <div className="mt-6 flex items-center gap-4 text-sm">
             <div className="flex items-center gap-2 bg-white/10 px-4 py-2 rounded-full border border-white/5 backdrop-blur-sm">
               <CalendarIcon className="w-4 h-4 text-brand-primary" />
@@ -129,14 +130,14 @@ export default function Dashboard({ profile }: DashboardProps) {
             {[1, 2, 3].map((i) => (
               <div key={i} className="flex items-center gap-4 p-4 rounded-2xl hover:bg-white/5 transition-colors border border-transparent hover:border-white/5">
                 <div className="w-10 h-10 bg-brand-navy/20 rounded-full flex items-center justify-center text-brand-primary">
-                  <Users className="w-5 h-5" />
+                  <FileText className="w-5 h-5" />
                 </div>
                 <div className="flex-1">
-                  <p className="text-sm font-bold text-white">Absensi Siswa Kelas XII TKJ 1</p>
-                  <p className="text-xs text-gray-400">Dilakukan oleh Guru Budi • 10 menit yang lalu</p>
+                  <p className="text-sm font-bold text-white">Ujian Akhir Semester Ganjil - Produktif TKJ</p>
+                  <p className="text-xs text-gray-400">Dimulai oleh Guru Budi • 10 menit yang lalu</p>
                 </div>
                 <div className="text-right">
-                  <span className="text-xs font-bold px-3 py-1 bg-green-500/20 text-green-400 rounded-full border border-green-500/20">Selesai</span>
+                  <span className="text-xs font-bold px-3 py-1 bg-green-500/20 text-green-400 rounded-full border border-green-500/20">Sedang Berlangsung</span>
                 </div>
               </div>
             ))}
@@ -149,16 +150,16 @@ export default function Dashboard({ profile }: DashboardProps) {
           <div className="space-y-4">
             <button className="w-full bg-white/10 hover:bg-white/20 p-4 rounded-2xl text-left transition-all flex items-center justify-between group border border-white/5">
               <div>
-                <p className="font-bold">Absen Mandiri</p>
-                <p className="text-xs text-gray-300">Lakukan absensi hari ini</p>
+                <p className="font-bold">Presensi Pengawas</p>
+                <p className="text-xs text-gray-300">Lakukan presensi kehadiran pengawas</p>
               </div>
               <CheckCircle2 className="w-5 h-5 text-brand-primary group-hover:scale-110 transition-transform" />
             </button>
             {profile?.role !== 'staff' && (
               <button className="w-full bg-white/10 hover:bg-white/20 p-4 rounded-2xl text-left transition-all flex items-center justify-between group border border-white/5">
                 <div>
-                  <p className="font-bold">Absen Siswa</p>
-                  <p className="text-xs text-gray-300">Input kehadiran kelas</p>
+                  <p className="font-bold">Mulai Ujian</p>
+                  <p className="text-xs text-gray-300">Aktifkan soal ujian untuk siswa</p>
                 </div>
                 <GraduationCap className="w-5 h-5 text-brand-primary group-hover:scale-110 transition-transform" />
               </button>

@@ -1,6 +1,6 @@
 {
-  "name": "Absensi SMK Prima Unggul",
-  "description": "Aplikasi absensi siswa dan karyawan terintegrasi dengan Supabase untuk SMK Prima Unggul.",
+  "name": "CBT SMK Prima Unggul",
+  "description": "Aplikasi Computer Based Test (CBT) dan Ujian Online terintegrasi untuk SMK Prima Unggul.",
   "requestFramePermissions": [],
   "majorCapabilities": []
 }

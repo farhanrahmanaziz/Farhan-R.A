@@ -45,7 +45,7 @@ export default function Login() {
             <LogIn className="w-8 h-8 text-white" />
           </div>
           <h1 className="text-3xl font-bold text-white mb-2">Selamat Datang</h1>
-          <p className="text-gray-400">Silakan masuk ke Portal Absensi SMK Prima Unggul</p>
+          <p className="text-gray-400">Silakan masuk ke Portal CBT SMK Prima Unggul</p>
         </div>
 
         {error && (
