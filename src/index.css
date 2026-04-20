@@ -7,8 +7,8 @@
   --color-brand-dark: #0a0a0a;
   --color-brand-primary: #7f1d1d;
   --color-brand-secondary: #3b1a0a;
-  --color-brand-accent: #991b1b;
-  --color-brand-navy: #0f172a;
+  --color-brand-accent: #b91c1c;
+  --color-brand-bright: #991b1b;
 }
 
 @layer base {

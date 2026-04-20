@@ -17,8 +17,8 @@ export default function Landing() {
       {/* Navbar */}
       <nav className="fixed top-0 w-full z-50 bg-brand-dark/80 backdrop-blur-md border-b border-white/10 px-6 py-4 flex justify-between items-center text-white">
         <div className="flex items-center gap-2">
-          <div className="w-10 h-10 bg-brand-primary rounded-lg flex items-center justify-center font-bold text-xl">S</div>
-          <div className="text-xl font-bold tracking-tight">
+          <div className="w-10 h-10 bg-brand-bright rounded-lg flex items-center justify-center font-bold text-xl px-1 text-gray-200 shadow-lg shadow-brand-bright/20">PU</div>
+          <div className="text-xl font-bold tracking-tight text-brand-primary">
             SMK <span className="text-brand-primary">Prima Unggul</span>
           </div>
         </div>
@@ -35,8 +35,8 @@ export default function Landing() {
         {/* Background Decorative Elements */}
         <div className="absolute top-0 left-0 w-full h-full opacity-20 pointer-events-none">
           <div className="absolute top-[-10%] left-[-10%] w-[40%] h-[40%] bg-brand-primary rounded-full blur-[120px]"></div>
-          <div className="absolute bottom-[-10%] right-[-10%] w-[40%] h-[40%] bg-brand-navy rounded-full blur-[120px]"></div>
-          <div className="absolute top-[20%] right-[10%] w-[30%] h-[30%] bg-brand-secondary rounded-full blur-[100px]"></div>
+          <div className="absolute bottom-[-10%] right-[-10%] w-[40%] h-[40%] bg-brand-secondary rounded-full blur-[120px]"></div>
+          <div className="absolute top-[20%] right-[10%] w-[30%] h-[30%] bg-brand-accent rounded-full blur-[100px]"></div>
         </div>
 
         <motion.div 
@@ -45,9 +45,9 @@ export default function Landing() {
           transition={{ duration: 0.8 }}
           className="relative z-10 max-w-4xl"
         >
-          <h1 className="text-5xl md:text-7xl font-extrabold text-white mb-6 leading-tight">
-            Portal Ujian Online <br />
-            <span className="text-transparent bg-clip-text bg-gradient-to-r from-brand-primary via-brand-secondary to-brand-navy">
+          <h1 className="text-5xl md:text-7xl font-extrabold mb-6 leading-tight">
+            <span className="text-brand-primary">Portal Ujian Online</span> <br />
+            <span className="text-transparent bg-clip-text bg-gradient-to-r from-brand-primary to-brand-secondary">
               CBT SMK Prima Unggul
             </span>
           </h1>
@@ -74,7 +74,7 @@ export default function Landing() {
                 initial={{ opacity: 0, y: 20 }}
                 animate={{ opacity: 1, y: 0 }}
                 transition={{ delay: 0.1 * idx }}
-                className="bg-white/5 border border-white/10 p-8 rounded-2xl backdrop-blur-sm hover:bg-brand-navy/30 hover:border-brand-primary/50 transition-all duration-300 text-left group"
+                className="bg-white/5 border border-white/10 p-8 rounded-2xl backdrop-blur-sm hover:bg-brand-secondary/30 hover:border-brand-primary/50 transition-all duration-300 text-left group"
               >
                 <div className="w-12 h-12 bg-brand-primary/20 text-brand-primary rounded-xl flex items-center justify-center mb-6 group-hover:scale-110 transition-transform">
                   {major.icon}

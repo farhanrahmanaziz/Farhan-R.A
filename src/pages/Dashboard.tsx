@@ -80,7 +80,7 @@ export default function Dashboard({ profile }: DashboardProps) {
       {/* Welcome Header */}
       <div className="bg-brand-dark rounded-3xl p-8 text-white relative overflow-hidden shadow-xl border border-white/5">
         <div className="absolute top-0 right-0 w-64 h-64 bg-brand-primary opacity-20 blur-[80px] -mr-32 -mt-32"></div>
-        <div className="absolute bottom-0 left-0 w-64 h-64 bg-brand-navy opacity-20 blur-[80px] -ml-32 -mb-32"></div>
+        <div className="absolute bottom-0 left-0 w-64 h-64 bg-brand-secondary opacity-20 blur-[80px] -ml-32 -mb-32"></div>
         <div className="relative z-10">
           <h1 className="text-3xl font-bold mb-2">Halo, {profile?.full_name}! 👋</h1>
           <p className="text-gray-400">Selamat datang kembali di sistem CBT SMK Prima Unggul.</p>
@@ -129,7 +129,7 @@ export default function Dashboard({ profile }: DashboardProps) {
           <div className="space-y-6">
             {[1, 2, 3].map((i) => (
               <div key={i} className="flex items-center gap-4 p-4 rounded-2xl hover:bg-white/5 transition-colors border border-transparent hover:border-white/5">
-                <div className="w-10 h-10 bg-brand-navy/20 rounded-full flex items-center justify-center text-brand-primary">
+                <div className="w-10 h-10 bg-brand-secondary/20 rounded-full flex items-center justify-center text-brand-primary">
                   <FileText className="w-5 h-5" />
                 </div>
                 <div className="flex-1">
@@ -145,7 +145,7 @@ export default function Dashboard({ profile }: DashboardProps) {
         </div>
 
         <div className="bg-brand-secondary rounded-3xl p-8 text-white shadow-xl relative overflow-hidden border border-white/5">
-          <div className="absolute top-0 right-0 w-32 h-32 bg-brand-navy opacity-30 blur-3xl"></div>
+          <div className="absolute top-0 right-0 w-32 h-32 bg-brand-dark opacity-30 blur-3xl"></div>
           <h3 className="text-xl font-bold mb-6">Akses Cepat</h3>
           <div className="space-y-4">
             <button className="w-full bg-white/10 hover:bg-white/20 p-4 rounded-2xl text-left transition-all flex items-center justify-between group border border-white/5">

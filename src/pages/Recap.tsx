@@ -141,7 +141,7 @@ export default function Recap({ profile }: Props) {
             {activeTab === 'karyawan' ? (
               <table className="w-full text-left">
                 <thead>
-                  <tr className="bg-brand-navy/20 border-b border-white/10 text-gray-400">
+                  <tr className="bg-brand-secondary/20 border-b border-white/10 text-gray-400">
                     <th className="px-8 py-5 text-xs font-bold uppercase tracking-widest">Waktu</th>
                     <th className="px-8 py-5 text-xs font-bold uppercase tracking-widest">Pengawas</th>
                     <th className="px-8 py-5 text-xs font-bold uppercase tracking-widest">Status</th>
@@ -178,7 +178,7 @@ export default function Recap({ profile }: Props) {
             ) : (
               <table className="w-full text-left">
                 <thead>
-                  <tr className="bg-brand-navy/20 border-b border-white/10 text-gray-400">
+                  <tr className="bg-brand-secondary/20 border-b border-white/10 text-gray-400">
                     <th className="px-8 py-5 text-xs font-bold uppercase tracking-widest">Tanggal</th>
                     <th className="px-8 py-5 text-xs font-bold uppercase tracking-widest">Peserta</th>
                     <th className="px-8 py-5 text-xs font-bold uppercase tracking-widest">Kelas</th>

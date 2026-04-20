@@ -141,7 +141,7 @@ export default function StudentAttendance({ profile }: Props) {
           <div className="overflow-x-auto">
             <table className="w-full text-left">
               <thead>
-                <tr className="bg-brand-navy/20 border-b border-white/10">
+                <tr className="bg-brand-secondary/20 border-b border-white/10">
                   <th className="px-8 py-5 text-xs font-bold text-gray-400 uppercase tracking-widest">NIS</th>
                   <th className="px-8 py-5 text-xs font-bold text-gray-400 uppercase tracking-widest">Nama Peserta</th>
                   <th className="px-8 py-5 text-xs font-bold text-gray-400 uppercase tracking-widest text-center">Status Pengerjaan</th>
@@ -184,7 +184,7 @@ export default function StudentAttendance({ profile }: Props) {
       )}
 
       <div className="bg-brand-secondary rounded-3xl p-8 text-white flex flex-col md:flex-row items-center justify-between gap-6 shadow-xl border border-white/5 relative overflow-hidden">
-        <div className="absolute top-0 right-0 w-32 h-32 bg-brand-navy opacity-30 blur-3xl"></div>
+        <div className="absolute top-0 right-0 w-32 h-32 bg-brand-dark opacity-30 blur-3xl"></div>
         <div className="flex items-center gap-4 relative z-10">
           <div className="w-12 h-12 bg-white/10 rounded-2xl flex items-center justify-center">
             <Clock className="w-6 h-6 text-brand-primary" />

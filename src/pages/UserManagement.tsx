@@ -151,7 +151,7 @@ export default function UserManagement() {
           <div className="overflow-x-auto">
             <table className="w-full text-left">
               <thead>
-                <tr className="bg-brand-navy/20 border-b border-white/10">
+                <tr className="bg-brand-secondary/20 border-b border-white/10">
                   <th className="px-8 py-5 text-xs font-bold text-gray-400 uppercase tracking-widest">User</th>
                   <th className="px-8 py-5 text-xs font-bold text-gray-400 uppercase tracking-widest">Role</th>
                   <th className="px-8 py-5 text-xs font-bold text-gray-400 uppercase tracking-widest">Terdaftar Pada</th>
@@ -216,7 +216,7 @@ export default function UserManagement() {
             animate={{ opacity: 1, scale: 1 }}
             className="bg-brand-dark border border-white/10 w-full max-w-lg rounded-3xl shadow-2xl overflow-hidden"
           >
-            <div className="bg-brand-navy/30 p-6 text-white flex items-center justify-between border-b border-white/10">
+            <div className="bg-brand-secondary/30 p-6 text-white flex items-center justify-between border-b border-white/10">
               <h3 className="text-xl font-bold flex items-center gap-2">
                 <Shield className="w-6 h-6 text-brand-primary" />
                 {editingUser ? 'Edit User' : 'Tambah User Baru'}

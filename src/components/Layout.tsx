@@ -85,14 +85,14 @@ export default function Layout({ profile }: LayoutProps) {
           isSidebarOpen ? "w-72" : "w-20"
         )}
       >
-        <div className="p-6 flex items-center justify-between border-b border-white/5 bg-brand-navy/20">
+        <div className="p-6 flex items-center justify-between border-b border-white/5 bg-brand-secondary/20">
           {isSidebarOpen ? (
             <div className="flex items-center gap-3">
-              <div className="w-8 h-8 bg-brand-primary rounded-lg flex items-center justify-center font-bold shadow-lg shadow-brand-primary/20">S</div>
+              <div className="w-8 h-8 bg-brand-bright rounded-lg flex items-center justify-center font-bold shadow-lg shadow-brand-bright/20 text-xs text-gray-200">PU</div>
               <span className="font-bold text-lg tracking-tight">SMK Prima Unggul</span>
             </div>
           ) : (
-            <div className="w-8 h-8 bg-brand-primary rounded-lg flex items-center justify-center font-bold mx-auto shadow-lg shadow-brand-primary/20">S</div>
+            <div className="w-8 h-8 bg-brand-bright rounded-lg flex items-center justify-center font-bold mx-auto shadow-lg shadow-brand-bright/20 text-xs text-gray-200">PU</div>
           )}
         </div>
 
@@ -107,7 +107,7 @@ export default function Layout({ profile }: LayoutProps) {
                   "flex items-center gap-4 px-4 py-3 rounded-xl transition-all group relative",
                   isActive 
                     ? "bg-brand-primary text-white shadow-lg shadow-brand-primary/20" 
-                    : "text-gray-400 hover:bg-brand-navy/50 hover:text-white"
+                    : "text-gray-400 hover:bg-brand-secondary/50 hover:text-white"
                 )}
               >
                 <div className={cn("flex-shrink-0", isActive ? "text-white" : "group-hover:text-white")}>
@@ -124,7 +124,7 @@ export default function Layout({ profile }: LayoutProps) {
           })}
         </nav>
 
-        <div className="p-4 border-t border-white/5 bg-brand-navy/10">
+        <div className="p-4 border-t border-white/5 bg-brand-secondary/10">
           {isSidebarOpen && (
             <div className="bg-white/5 rounded-2xl p-4 mb-4 border border-white/5">
               <p className="text-xs text-gray-500 uppercase tracking-widest mb-1">Logged in as</p>
@@ -134,7 +134,7 @@ export default function Layout({ profile }: LayoutProps) {
           )}
           <button 
             onClick={() => setIsSidebarOpen(!isSidebarOpen)}
-            className="w-full flex items-center justify-center p-3 rounded-xl hover:bg-brand-navy/50 text-gray-400 transition-colors"
+            className="w-full flex items-center justify-center p-3 rounded-xl hover:bg-brand-secondary/50 text-gray-400 transition-colors"
           >
             {isSidebarOpen ? <X className="w-5 h-5" /> : <Menu className="w-5 h-5" />}
           </button>

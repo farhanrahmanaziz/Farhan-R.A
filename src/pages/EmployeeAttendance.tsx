@@ -161,7 +161,7 @@ export default function EmployeeAttendance({ profile }: Props) {
         {/* Info Section */}
         <div className="space-y-8">
           <div className="bg-brand-secondary rounded-3xl p-8 text-white shadow-xl relative overflow-hidden border border-white/5">
-            <div className="absolute top-0 right-0 w-32 h-32 bg-brand-navy opacity-30 blur-3xl"></div>
+            <div className="absolute top-0 right-0 w-32 h-32 bg-brand-dark opacity-30 blur-3xl"></div>
             <h3 className="text-xl font-bold mb-6 flex items-center gap-2">
               <Clock className="w-6 h-6 text-brand-primary" />
               Waktu Real-time
