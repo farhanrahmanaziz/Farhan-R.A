@@ -92,7 +92,9 @@ export default function Layout({ profile }: LayoutProps) {
     },
   ];
 
-  const filteredMenu = menuItems.filter(item => profile && item.roles.includes(profile.role));
+  const filteredMenu = profile 
+    ? menuItems.filter(item => item.roles.includes(profile.role))
+    : menuItems.filter(item => item.roles.includes('guru')); // Fallback to guru menus while loading
 
   return (
     <div className="flex h-screen bg-gray-50 font-sans overflow-hidden">
