@@ -14,6 +14,9 @@ import StudentAttendance from './pages/StudentAttendance';
 import Students from './pages/Students';
 import UserManagement from './pages/UserManagement';
 import Recap from './pages/Recap';
+import MataPelajaran from './pages/MataPelajaran';
+import BankSoal from './pages/BankSoal';
+import JadwalUjian from './pages/JadwalUjian';
 import Layout from './components/Layout';
 import { Profile } from './types';
 
@@ -86,6 +89,11 @@ export default function App() {
           <Route index element={<Dashboard profile={profile} />} />
           <Route path="absensi-karyawan" element={<EmployeeAttendance profile={profile} />} />
           
+          {/* CBT Pages */}
+          <Route path="subjects" element={<MataPelajaran />} />
+          <Route path="bank-soal" element={<BankSoal />} />
+          <Route path="jadwal" element={<JadwalUjian />} />
+          
           {/* Guru & Admin Only */}
           <Route path="absensi-siswa" element={
             profile?.role === 'guru' || profile?.role === 'admin' 
@@ -93,12 +101,14 @@ export default function App() {
               : <Navigate to="/app" />
           } />
           
-          {/* Admin Only */}
+          {/* Admin & Guru Access */}
           <Route path="students" element={
-            profile?.role === 'admin' 
+            profile?.role === 'admin' || profile?.role === 'guru'
               ? <Students /> 
               : <Navigate to="/app" />
           } />
+          
+          {/* Admin Only */}
           <Route path="users" element={
             profile?.role === 'admin' 
               ? <UserManagement /> 

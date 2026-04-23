@@ -71,8 +71,8 @@ export default function EmployeeAttendance({ profile }: Props) {
     <div className="max-w-4xl mx-auto space-y-8">
       <div className="flex flex-col md:flex-row md:items-center justify-between gap-4">
         <div>
-          <h1 className="text-3xl font-bold text-slate-900 font-serif">Presensi Pengawas</h1>
-          <p className="text-slate-500">Silakan lakukan presensi kehadiran Anda sebagai pengawas ujian.</p>
+          <h1 className="text-3xl font-bold text-slate-900 font-serif lowercase tracking-tighter"><span className="capitalize">P</span>resensi <span className="capitalize">P</span>engawas <span className="capitalize">U</span>jian</h1>
+          <p className="text-slate-500">Silakan lakukan presensi kehadiran Anda sebagai pengawas ujian hari ini.</p>
         </div>
         <div className="bg-white px-6 py-3 rounded-2xl shadow-sm border border-slate-200 flex items-center gap-3">
           <CalendarIcon className="w-5 h-5 text-brand-primary" />

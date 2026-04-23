@@ -10,7 +10,12 @@ import {
   Menu, 
   X,
   FileText,
-  ChevronRight
+  ChevronRight,
+  Library,
+  CalendarClock,
+  BookOpen,
+  BarChart3,
+  ClipboardList
 } from 'lucide-react';
 import { useState } from 'react';
 import { Profile } from '../types';
@@ -43,21 +48,39 @@ export default function Layout({ profile }: LayoutProps) {
       roles: ['admin', 'guru', 'staff']
     },
     { 
-      name: 'Presensi Guru', 
-      path: '/app/absensi-karyawan', 
-      icon: <UserCheck className="w-5 h-5" />,
-      roles: ['admin', 'guru', 'staff']
-    },
-    { 
-      name: 'Bank Soal / Ujian', 
-      path: '/app/absensi-siswa', 
-      icon: <GraduationCap className="w-5 h-5" />,
+      name: 'Mata Pelajaran', 
+      path: '/app/subjects', 
+      icon: <BookOpen className="w-5 h-5" />,
       roles: ['admin', 'guru']
     },
     { 
-      name: 'Data Siswa', 
+      name: 'Bank Soal', 
+      path: '/app/bank-soal', 
+      icon: <Library className="w-5 h-5" />,
+      roles: ['admin', 'guru']
+    },
+    { 
+      name: 'Jadwal Ujian', 
+      path: '/app/jadwal', 
+      icon: <CalendarClock className="w-5 h-5" />,
+      roles: ['admin', 'guru']
+    },
+    { 
+      name: 'Data Peserta', 
       path: '/app/students', 
-      icon: <FileText className="w-5 h-5" />,
+      icon: <Users className="w-5 h-5" />,
+      roles: ['admin', 'guru']
+    },
+    { 
+      name: 'Hasil Ujian', 
+      path: '/app/rekap', 
+      icon: <BarChart3 className="w-5 h-5" />,
+      roles: ['admin', 'guru']
+    },
+    { 
+      name: 'Data Guru', 
+      path: '/app/absensi-karyawan', 
+      icon: <UserCheck className="w-5 h-5" />,
       roles: ['admin']
     },
     { 
@@ -65,12 +88,6 @@ export default function Layout({ profile }: LayoutProps) {
       path: '/app/users', 
       icon: <Settings className="w-5 h-5" />,
       roles: ['admin']
-    },
-    { 
-      name: 'Hasil & Rekap', 
-      path: '/app/rekap', 
-      icon: <Users className="w-5 h-5" />,
-      roles: ['admin', 'guru']
     },
   ];
 

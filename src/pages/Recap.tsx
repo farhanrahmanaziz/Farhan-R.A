@@ -78,8 +78,8 @@ export default function Recap({ profile }: Props) {
     <div className="space-y-8 text-slate-800">
       <div className="flex flex-col md:flex-row md:items-center justify-between gap-6">
         <div>
-          <h1 className="text-3xl font-bold text-slate-900 font-serif lowercase"><span className="capitalize">H</span>asil & <span className="capitalize">R</span>ekap <span className="capitalize">U</span>jian</h1>
-          <p className="text-slate-500">Lihat dan unduh laporan hasil pengerjaan ujian siswa.</p>
+          <h1 className="text-3xl font-bold text-slate-900 font-serif lowercase tracking-tighter"><span className="capitalize">H</span>asil & <span className="capitalize">L</span>aporan <span className="capitalize">U</span>jian</h1>
+          <p className="text-slate-500">Lihat hasil pengerjaan ujian dan monitoring kehadiran pengawas.</p>
         </div>
         <button className="flex items-center gap-2 bg-white hover:bg-brand-primary hover:text-white text-slate-700 px-6 py-3 rounded-2xl font-bold border border-slate-200 transition-all shadow-sm">
           <Download className="w-5 h-5" />
@@ -97,7 +97,7 @@ export default function Recap({ profile }: Props) {
             }`}
           >
             <Users className="w-4 h-4" />
-            Data Pengawas
+            Laporan Pengawas
           </button>
         )}
         {(profile?.role === 'admin' || profile?.role === 'guru') && (
@@ -108,7 +108,7 @@ export default function Recap({ profile }: Props) {
             }`}
           >
             <GraduationCap className="w-4 h-4" />
-            Data Peserta
+            Nilai Peserta
           </button>
         )}
       </div>

@@ -116,8 +116,8 @@ export default function Students() {
     <div className="space-y-8">
       <div className="flex flex-col md:flex-row md:items-center justify-between gap-6">
         <div>
-          <h1 className="text-3xl font-bold text-slate-900 font-serif">Data Siswa</h1>
-          <p className="text-slate-500">Kelola informasi seluruh siswa SMK Prima Unggul.</p>
+          <h1 className="text-3xl font-bold text-slate-900 font-serif lowercase tracking-tighter text-balance"><span className="capitalize">D</span>ata <span className="capitalize">P</span>eserta <span className="capitalize">U</span>jian</h1>
+          <p className="text-slate-500">Kelola informasi seluruh peserta ujian SMK Prima Unggul.</p>
         </div>
         <button
           onClick={() => { resetForm(); setIsModalOpen(true); }}
