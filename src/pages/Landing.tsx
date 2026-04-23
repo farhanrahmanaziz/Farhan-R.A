@@ -63,6 +63,47 @@ export default function Landing() {
           </div>
         </motion.div>
 
+        {/* CBT Hero Image / Mockup Placeholder */}
+        <motion.div 
+          initial={{ opacity: 0, scale: 0.9 }}
+          animate={{ opacity: 1, scale: 1 }}
+          transition={{ delay: 0.4 }}
+          className="mt-20 relative px-4"
+        >
+          <div className="bg-slate-900 rounded-[2.5rem] p-4 shadow-2xl border border-slate-800 max-w-5xl mx-auto flex flex-col md:flex-row items-center gap-8 group">
+            <div className="flex-1 p-8 text-left">
+              <div className="inline-flex items-center gap-2 bg-brand-primary/20 text-brand-primary px-4 py-1.5 rounded-full text-xs font-black uppercase tracking-widest mb-6 border border-brand-primary/10">
+                <div className="w-2 h-2 bg-brand-primary rounded-full animate-pulse"></div>
+                Sistem Terpadu
+              </div>
+              <h3 className="text-3xl font-bold text-white mb-4 leading-tight">Pengalaman Ujian yang Luar Biasa.</h3>
+              <p className="text-slate-400 leading-relaxed mb-8">Ujian aman dengan sistem monitoring real-time, bank soal terpusat, dan penilaian otomatis yang akurat.</p>
+              <div className="flex gap-4">
+                <div className="flex flex-col">
+                  <span className="text-2xl font-bold text-white">100%</span>
+                  <span className="text-[10px] text-slate-500 font-bold uppercase tracking-widest">Digital</span>
+                </div>
+                <div className="w-px h-10 bg-slate-800 mx-2"></div>
+                <div className="flex flex-col">
+                  <span className="text-2xl font-bold text-white">Anti</span>
+                  <span className="text-[10px] text-slate-500 font-bold uppercase tracking-widest">Cheating</span>
+                </div>
+              </div>
+            </div>
+            <div className="w-full md:w-1/2 bg-slate-800 rounded-3xl h-64 md:h-80 overflow-hidden relative border border-slate-700 shadow-inner group-hover:border-brand-primary/50 transition-colors">
+              <div className="absolute inset-0 bg-[radial-gradient(circle_at_50%_50%,#7f1d1d_0%,transparent_100%)] opacity-20 group-hover:opacity-40 transition-opacity"></div>
+              {/* Abstract UI representation */}
+              <div className="p-6 space-y-4">
+                <div className="w-2/3 h-4 bg-slate-700 rounded-full"></div>
+                <div className="w-full h-24 bg-slate-700/50 rounded-2xl border border-slate-600/50"></div>
+                <div className="grid grid-cols-4 gap-3">
+                   {[1,2,3,4].map(btn => <div key={btn} className="h-10 bg-slate-700 rounded-lg"></div>)}
+                </div>
+              </div>
+            </div>
+          </div>
+        </motion.div>
+
         {/* Majors Grid */}
         <div className="relative z-10 mt-24 w-full max-w-6xl">
           <h2 className="text-sm font-bold text-slate-400 mb-10 uppercase tracking-[0.2em] font-sans">Program Keahlian</h2>

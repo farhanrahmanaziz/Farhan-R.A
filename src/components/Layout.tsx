@@ -11,6 +11,7 @@ import {
   X,
   FileText,
   ChevronRight,
+  ChevronLeft,
   Library,
   CalendarClock,
   BookOpen,
@@ -162,7 +163,20 @@ export default function Layout({ profile }: LayoutProps) {
       <div className="flex-1 flex flex-col min-w-0 overflow-hidden bg-brand-dark">
         <header className="h-20 bg-white border-b border-slate-200 flex items-center justify-between px-8 flex-shrink-0 z-10">
           <div className="flex items-center gap-4">
-            <h2 className="text-xl font-bold text-slate-900">
+            {location.pathname !== '/app' && (
+              <button 
+                onClick={() => navigate(-1)}
+                className="p-2 hover:bg-slate-100 rounded-xl text-slate-500 transition-colors flex items-center gap-2 group"
+                title="Kembali"
+              >
+                <ChevronLeft className="w-5 h-5 group-hover:-translate-x-0.5 transition-transform" />
+                <span className="text-sm font-bold hidden sm:inline">Kembali</span>
+              </button>
+            )}
+            <h2 className={cn(
+              "text-xl font-bold text-slate-900",
+              location.pathname !== '/app' && "border-l border-slate-200 pl-4"
+            )}>
               {filteredMenu.find(m => m.path === location.pathname)?.name || 'Dashboard'}
             </h2>
           </div>

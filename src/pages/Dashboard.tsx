@@ -1,5 +1,6 @@
 import { Profile } from '../types';
 import { motion } from 'motion/react';
+import { Link } from 'react-router-dom';
 import { 
   Users, 
   GraduationCap, 
@@ -46,9 +47,9 @@ export default function Dashboard({ profile }: DashboardProps) {
 
   const cards = [
     { 
-      title: 'Total Siswa', 
+      title: 'Total Peserta', 
       value: stats.totalStudents, 
-      icon: <GraduationCap className="w-6 h-6" />, 
+      icon: <Users className="w-6 h-6" />, 
       color: 'bg-blue-500',
       roles: ['admin', 'guru']
     },
@@ -60,14 +61,14 @@ export default function Dashboard({ profile }: DashboardProps) {
       roles: ['admin', 'guru']
     },
     { 
-      title: 'Ujian Aktif', 
+      title: 'Jadwal Aktif', 
       value: '3', 
       icon: <CheckCircle2 className="w-6 h-6" />, 
       color: 'bg-green-500',
       roles: ['admin', 'guru', 'staff']
     },
     { 
-      title: 'Hasil Menunggu', 
+      title: 'Laporan Masuk', 
       value: '12', 
       icon: <Clock className="w-6 h-6" />, 
       color: 'bg-orange-500',
@@ -147,30 +148,30 @@ export default function Dashboard({ profile }: DashboardProps) {
         <div className="bg-white rounded-3xl p-8 text-slate-800 shadow-sm relative overflow-hidden border border-slate-200">
           <h3 className="text-xl font-bold mb-6 text-slate-900">Akses Cepat</h3>
           <div className="space-y-4">
-            <button className="w-full bg-slate-50 hover:bg-slate-100 p-4 rounded-2xl text-left transition-all flex items-center justify-between group border border-slate-200/50">
+            <Link to="/app/bank-soal" className="w-full bg-slate-50 hover:bg-slate-100 p-4 rounded-2xl text-left transition-all flex items-center justify-between group border border-slate-200/50">
               <div>
-                <p className="font-bold text-slate-900">Presensi Pengawas</p>
-                <p className="text-xs text-slate-500">Lakukan presensi kehadiran pengawas</p>
+                <p className="font-bold text-slate-900">Kelola Bank Soal</p>
+                <p className="text-xs text-slate-500">Buat dan atur paket soal ujian</p>
               </div>
-              <CheckCircle2 className="w-5 h-5 text-brand-primary group-hover:scale-110 transition-transform" />
-            </button>
+              <FileText className="w-5 h-5 text-brand-primary group-hover:scale-110 transition-transform" />
+            </Link>
             {profile?.role !== 'staff' && (
-              <button className="w-full bg-slate-50 hover:bg-slate-100 p-4 rounded-2xl text-left transition-all flex items-center justify-between group border border-slate-200/50">
+              <Link to="/app/jadwal" className="w-full bg-slate-50 hover:bg-slate-100 p-4 rounded-2xl text-left transition-all flex items-center justify-between group border border-slate-200/50">
                 <div>
-                  <p className="font-bold text-slate-900">Mulai Ujian</p>
-                  <p className="text-xs text-slate-500">Aktifkan soal ujian untuk siswa</p>
+                  <p className="font-bold text-slate-900">Atur Jadwal</p>
+                  <p className="text-xs text-slate-500">Publikasikan jadwal ujian hari ini</p>
                 </div>
-                <GraduationCap className="w-5 h-5 text-brand-primary group-hover:scale-110 transition-transform" />
-              </button>
+                <CalendarIcon className="w-5 h-5 text-brand-primary group-hover:scale-110 transition-transform" />
+              </Link>
             )}
             {profile?.role === 'admin' && (
-              <button className="w-full bg-slate-50 hover:bg-slate-100 p-4 rounded-2xl text-left transition-all flex items-center justify-between group border border-slate-200/50">
+              <Link to="/app/users" className="w-full bg-slate-50 hover:bg-slate-100 p-4 rounded-2xl text-left transition-all flex items-center justify-between group border border-slate-200/50">
                 <div>
-                  <p className="font-bold text-slate-900">Kelola User</p>
-                  <p className="text-xs text-slate-500">Tambah/edit akun</p>
+                  <p className="font-bold text-slate-900">Pengaturan Sistem</p>
+                  <p className="text-xs text-slate-500">Konfigurasi user dan hak akses</p>
                 </div>
                 <Settings className="w-5 h-5 text-brand-primary group-hover:scale-110 transition-transform" />
-              </button>
+              </Link>
             )}
           </div>
         </div>
