@@ -26,7 +26,7 @@ interface LayoutProps {
 }
 
 export default function Layout({ profile }: LayoutProps) {
-  const [isSidebarOpen, setIsSidebarOpen] = useState(true);
+  const [isSidebarOpen, setIsSidebarOpen] = useState(false);
   const location = useLocation();
   const navigate = useNavigate();
 
@@ -81,18 +81,18 @@ export default function Layout({ profile }: LayoutProps) {
       {/* Sidebar */}
       <aside 
         className={cn(
-          "bg-brand-dark text-white transition-all duration-300 ease-in-out flex flex-col z-40 border-r border-white/5",
+          "bg-white text-slate-800 transition-all duration-300 ease-in-out flex flex-col z-40 border-r border-slate-200 shadow-sm",
           isSidebarOpen ? "w-72" : "w-20"
         )}
       >
-        <div className="p-6 flex items-center justify-between border-b border-white/5 bg-brand-secondary/20">
+        <div className="p-6 flex items-center justify-between border-b border-slate-100 bg-slate-50/50">
           {isSidebarOpen ? (
             <div className="flex items-center gap-3">
-              <div className="w-8 h-8 bg-brand-bright rounded-lg flex items-center justify-center font-bold shadow-lg shadow-brand-bright/20 text-xs text-gray-200">PU</div>
-              <span className="font-bold text-lg tracking-tight">SMK Prima Unggul</span>
+              <div className="w-8 h-8 bg-red-800 rounded-lg flex items-center justify-center font-bold shadow-lg shadow-red-900/10 text-xs text-slate-100">PU</div>
+              <span className="font-bold text-lg tracking-tight text-slate-900">SMK Prima Unggul</span>
             </div>
           ) : (
-            <div className="w-8 h-8 bg-brand-bright rounded-lg flex items-center justify-center font-bold mx-auto shadow-lg shadow-brand-bright/20 text-xs text-gray-200">PU</div>
+            <div className="w-8 h-8 bg-red-800 rounded-lg flex items-center justify-center font-bold mx-auto shadow-lg shadow-red-900/10 text-xs text-slate-100">PU</div>
           )}
         </div>
 
@@ -106,11 +106,11 @@ export default function Layout({ profile }: LayoutProps) {
                 className={cn(
                   "flex items-center gap-4 px-4 py-3 rounded-xl transition-all group relative",
                   isActive 
-                    ? "bg-brand-primary text-white shadow-lg shadow-brand-primary/20" 
-                    : "text-gray-400 hover:bg-brand-secondary/50 hover:text-white"
+                    ? "bg-brand-primary text-white shadow-lg shadow-brand-primary/10" 
+                    : "text-slate-500 hover:bg-slate-100 hover:text-slate-900"
                 )}
               >
-                <div className={cn("flex-shrink-0", isActive ? "text-white" : "group-hover:text-white")}>
+                <div className={cn("flex-shrink-0", isActive ? "text-white" : "group-hover:text-brand-primary")}>
                   {item.icon}
                 </div>
                 {isSidebarOpen && (
@@ -124,17 +124,17 @@ export default function Layout({ profile }: LayoutProps) {
           })}
         </nav>
 
-        <div className="p-4 border-t border-white/5 bg-brand-secondary/10">
+        <div className="p-4 border-t border-slate-100 bg-slate-50/50">
           {isSidebarOpen && (
-            <div className="bg-white/5 rounded-2xl p-4 mb-4 border border-white/5">
-              <p className="text-xs text-gray-500 uppercase tracking-widest mb-1">Logged in as</p>
-              <p className="font-bold text-sm truncate">{profile?.full_name}</p>
-              <p className="text-xs text-brand-primary font-bold uppercase mt-1">{profile?.role}</p>
+            <div className="bg-white rounded-2xl p-4 mb-4 border border-slate-200 shadow-sm">
+              <p className="text-xs text-slate-400 uppercase tracking-widest mb-1 font-medium">Logged in as</p>
+              <p className="font-bold text-sm truncate text-slate-900">{profile?.full_name}</p>
+              <p className="text-xs text-brand-primary font-bold uppercase mt-1 tracking-wider">{profile?.role}</p>
             </div>
           )}
           <button 
             onClick={() => setIsSidebarOpen(!isSidebarOpen)}
-            className="w-full flex items-center justify-center p-3 rounded-xl hover:bg-brand-secondary/50 text-gray-400 transition-colors"
+            className="w-full flex items-center justify-center p-3 rounded-xl hover:bg-slate-100 text-slate-400 transition-colors"
           >
             {isSidebarOpen ? <X className="w-5 h-5" /> : <Menu className="w-5 h-5" />}
           </button>
@@ -142,22 +142,22 @@ export default function Layout({ profile }: LayoutProps) {
       </aside>
 
       {/* Main Content */}
-      <div className="flex-1 flex flex-col min-w-0 overflow-hidden">
-        <header className="h-20 bg-brand-dark border-b border-white/10 flex items-center justify-between px-8 flex-shrink-0">
+      <div className="flex-1 flex flex-col min-w-0 overflow-hidden bg-brand-dark">
+        <header className="h-20 bg-white border-b border-slate-200 flex items-center justify-between px-8 flex-shrink-0 z-10">
           <div className="flex items-center gap-4">
-            <h2 className="text-xl font-bold text-white">
+            <h2 className="text-xl font-bold text-slate-900">
               {filteredMenu.find(m => m.path === location.pathname)?.name || 'Dashboard'}
             </h2>
           </div>
 
           <div className="flex items-center gap-6">
             <div className="hidden md:flex flex-col items-end">
-              <span className="text-sm font-bold text-white">{profile?.full_name}</span>
+              <span className="text-sm font-bold text-slate-900">{profile?.full_name}</span>
               <span className="text-xs text-brand-primary font-bold capitalize">{profile?.role}</span>
             </div>
             <button 
               onClick={handleLogout}
-              className="flex items-center gap-2 bg-white/5 hover:bg-brand-primary text-white px-4 py-2 rounded-xl font-medium transition-all border border-white/10"
+              className="flex items-center gap-2 bg-white hover:bg-brand-primary hover:text-white text-slate-600 px-4 py-2 rounded-xl font-medium transition-all border border-slate-200 shadow-sm"
             >
               <LogOut className="w-4 h-4" />
               <span className="hidden sm:inline">Logout</span>

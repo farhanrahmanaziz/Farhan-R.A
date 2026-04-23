@@ -71,12 +71,12 @@ export default function EmployeeAttendance({ profile }: Props) {
     <div className="max-w-4xl mx-auto space-y-8">
       <div className="flex flex-col md:flex-row md:items-center justify-between gap-4">
         <div>
-          <h1 className="text-3xl font-bold text-white">Presensi Pengawas</h1>
-          <p className="text-gray-400">Silakan lakukan presensi kehadiran Anda sebagai pengawas ujian.</p>
+          <h1 className="text-3xl font-bold text-slate-900 font-serif">Presensi Pengawas</h1>
+          <p className="text-slate-500">Silakan lakukan presensi kehadiran Anda sebagai pengawas ujian.</p>
         </div>
-        <div className="bg-white/5 px-6 py-3 rounded-2xl shadow-sm border border-white/10 flex items-center gap-3">
+        <div className="bg-white px-6 py-3 rounded-2xl shadow-sm border border-slate-200 flex items-center gap-3">
           <CalendarIcon className="w-5 h-5 text-brand-primary" />
-          <span className="font-bold text-gray-200">{format(new Date(), 'EEEE, d MMMM yyyy', { locale: id })}</span>
+          <span className="font-bold text-slate-700">{format(new Date(), 'EEEE, d MMMM yyyy', { locale: id })}</span>
         </div>
       </div>
 
@@ -85,27 +85,27 @@ export default function EmployeeAttendance({ profile }: Props) {
         <motion.div 
           initial={{ opacity: 0, x: -20 }}
           animate={{ opacity: 1, x: 0 }}
-          className="bg-white/5 rounded-3xl p-8 shadow-sm border border-white/10"
+          className="bg-white rounded-3xl p-8 shadow-sm border border-slate-200"
         >
           {todayAttendance ? (
             <div className="text-center py-10">
-              <div className="w-20 h-20 bg-green-500/10 text-green-500 rounded-full flex items-center justify-center mx-auto mb-6 border border-green-500/20">
+              <div className="w-20 h-20 bg-green-50 text-green-600 rounded-full flex items-center justify-center mx-auto mb-6 border-2 border-green-200 shadow-inner">
                 <CheckCircle2 className="w-10 h-10" />
               </div>
-              <h3 className="text-2xl font-bold text-white mb-2">Presensi Berhasil!</h3>
-              <p className="text-gray-400 mb-6">Anda telah tercatat sebagai pengawas hari ini pada pukul:</p>
-              <div className="bg-white/5 inline-block px-8 py-4 rounded-2xl font-mono text-2xl font-bold text-white border border-white/10">
+              <h3 className="text-2xl font-bold text-slate-900 mb-2 font-serif">Presensi Berhasil!</h3>
+              <p className="text-slate-500 mb-6">Anda telah tercatat sebagai pengawas hari ini pada pukul:</p>
+              <div className="bg-slate-50 inline-block px-8 py-4 rounded-2xl font-mono text-2xl font-bold text-slate-900 border border-slate-200 shadow-inner">
                 {format(new Date(todayAttendance.check_in), 'HH:mm:ss')}
               </div>
-              <div className="mt-8 pt-8 border-t border-white/10 text-left">
+              <div className="mt-8 pt-8 border-t border-slate-100 text-left">
                 <div className="flex justify-between text-sm mb-2">
-                  <span className="text-gray-400">Status Pengawas:</span>
-                  <span className="font-bold text-green-400">{todayAttendance.status}</span>
+                  <span className="text-slate-400 font-medium">Status Pengawas:</span>
+                  <span className="font-bold text-green-600 uppercase tracking-wider">{todayAttendance.status}</span>
                 </div>
                 {todayAttendance.keterangan && (
                   <div className="flex justify-between text-sm">
-                    <span className="text-gray-400">Keterangan:</span>
-                    <span className="font-bold text-white">{todayAttendance.keterangan}</span>
+                    <span className="text-slate-400 font-medium">Keterangan:</span>
+                    <span className="font-bold text-slate-700">{todayAttendance.keterangan}</span>
                   </div>
                 )}
               </div>
@@ -113,7 +113,7 @@ export default function EmployeeAttendance({ profile }: Props) {
           ) : (
             <form onSubmit={handleAbsen} className="space-y-6">
               <div className="space-y-4">
-                <label className="text-sm font-bold text-gray-400 uppercase tracking-wider">Status Kehadiran</label>
+                <label className="text-xs font-bold text-slate-500 uppercase tracking-widest">Status Kehadiran</label>
                 <div className="grid grid-cols-3 gap-4">
                   {(['Hadir', 'Izin', 'Sakit'] as const).map((s) => (
                     <button
@@ -122,8 +122,8 @@ export default function EmployeeAttendance({ profile }: Props) {
                       onClick={() => setStatus(s)}
                       className={`py-4 rounded-2xl font-bold transition-all border-2 ${
                         status === s 
-                          ? 'bg-brand-primary/20 border-brand-primary text-white shadow-lg shadow-brand-primary/10' 
-                          : 'bg-white/5 border-transparent text-gray-400 hover:bg-white/10'
+                          ? 'bg-brand-primary/5 border-brand-primary text-brand-primary shadow-sm' 
+                          : 'bg-slate-50 border-slate-200 text-slate-400 hover:bg-white hover:border-slate-300'
                       }`}
                     >
                       {s}
@@ -133,18 +133,18 @@ export default function EmployeeAttendance({ profile }: Props) {
               </div>
 
               <div className="space-y-2">
-                <label className="text-sm font-bold text-gray-400 uppercase tracking-wider">Keterangan (Opsional)</label>
+                <label className="text-xs font-bold text-slate-500 uppercase tracking-widest">Keterangan (Opsional)</label>
                 <textarea
                   value={keterangan}
                   onChange={(e) => setKeterangan(e.target.value)}
-                  className="w-full bg-white/5 border border-white/10 rounded-2xl p-4 focus:outline-none focus:border-brand-primary transition-all min-h-[120px] text-white"
+                  className="w-full bg-slate-50 border border-slate-200 rounded-2xl p-4 focus:outline-none focus:border-brand-primary focus:bg-white transition-all min-h-[120px] text-slate-900 shadow-inner"
                   placeholder="Contoh: Sedang dinas luar, atau alasan sakit..."
                 />
               </div>
 
-              <div className="bg-blue-500/10 p-4 rounded-2xl flex gap-3 text-blue-400 text-sm border border-blue-500/20">
-                <MapPin className="w-5 h-5 flex-shrink-0" />
-                <p>Lokasi Anda akan dicatat secara otomatis untuk keperluan verifikasi.</p>
+              <div className="bg-blue-50 p-4 rounded-2xl flex gap-3 text-blue-700 text-sm border border-blue-200">
+                <MapPin className="w-5 h-5 flex-shrink-0 text-blue-600" />
+                <p className="font-medium">Lokasi Anda akan dicatat secara otomatis untuk keperluan verifikasi.</p>
               </div>
 
               <button
@@ -160,8 +160,8 @@ export default function EmployeeAttendance({ profile }: Props) {
 
         {/* Info Section */}
         <div className="space-y-8">
-          <div className="bg-brand-secondary rounded-3xl p-8 text-white shadow-xl relative overflow-hidden border border-white/5">
-            <div className="absolute top-0 right-0 w-32 h-32 bg-brand-dark opacity-30 blur-3xl"></div>
+          <div className="bg-slate-900 rounded-3xl p-8 text-white shadow-xl relative overflow-hidden border border-slate-800">
+            <div className="absolute top-0 right-0 w-32 h-32 bg-brand-primary opacity-20 blur-3xl"></div>
             <h3 className="text-xl font-bold mb-6 flex items-center gap-2">
               <Clock className="w-6 h-6 text-brand-primary" />
               Waktu Real-time
@@ -169,26 +169,26 @@ export default function EmployeeAttendance({ profile }: Props) {
             <div className="text-5xl font-mono font-bold tracking-tighter mb-2">
               {format(new Date(), 'HH:mm')}
             </div>
-            <p className="text-gray-300 text-sm">Pastikan Anda melakukan presensi sebelum waktu ujian dimulai.</p>
+            <p className="text-slate-400 text-sm">Pastikan Anda melakukan presensi sebelum waktu ujian dimulai.</p>
           </div>
 
-          <div className="bg-white/5 rounded-3xl p-8 shadow-sm border border-white/10">
-            <h3 className="text-lg font-bold text-white mb-6 flex items-center gap-2">
-              <AlertCircle className="w-5 h-5 text-orange-500" />
+          <div className="bg-white rounded-3xl p-8 shadow-sm border border-slate-200">
+            <h3 className="text-lg font-bold text-slate-900 mb-6 flex items-center gap-2 font-serif">
+              <AlertCircle className="w-5 h-5 text-brand-primary" />
               Instruksi Pengawas
             </h3>
-            <ul className="space-y-4 text-sm text-gray-400">
+            <ul className="space-y-4 text-sm text-slate-500">
               <li className="flex gap-3">
                 <div className="w-1.5 h-1.5 bg-brand-primary rounded-full mt-1.5 flex-shrink-0"></div>
-                <span>Presensi hanya dapat dilakukan saat jadwal ujian aktif.</span>
+                <span className="font-medium">Presensi hanya dapat dilakukan saat jadwal ujian aktif.</span>
               </li>
               <li className="flex gap-3">
                 <div className="w-1.5 h-1.5 bg-brand-primary rounded-full mt-1.5 flex-shrink-0"></div>
-                <span>Laporkan segala bentuk kecurangan melalui kolom keterangan.</span>
+                <span className="font-medium">Laporkan segala bentuk kecurangan melalui kolom keterangan.</span>
               </li>
               <li className="flex gap-3">
                 <div className="w-1.5 h-1.5 bg-brand-primary rounded-full mt-1.5 flex-shrink-0"></div>
-                <span>Pastikan koneksi internet stabil sebelum memulai ujian.</span>
+                <span className="font-medium">Pastikan koneksi internet stabil sebelum memulai ujian.</span>
               </li>
             </ul>
           </div>

@@ -4,15 +4,15 @@
 @theme {
   --font-sans: "Plus Jakarta Sans", ui-sans-serif, system-ui, sans-serif;
   
-  --color-brand-dark: #0a0a0a;
+  --color-brand-dark: #f8fafc;
   --color-brand-primary: #7f1d1d;
-  --color-brand-secondary: #3b1a0a;
+  --color-brand-secondary: #f1f5f9;
   --color-brand-accent: #b91c1c;
   --color-brand-bright: #991b1b;
 }
 
 @layer base {
   body {
-    @apply font-sans bg-brand-dark text-gray-200;
+    @apply font-sans bg-brand-dark text-slate-800;
   }
 }
